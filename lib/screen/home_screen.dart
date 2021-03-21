@@ -39,8 +39,40 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-         
+         child: ListView(
+          children: [         
+            DrawerHeader(
+              margin: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage("https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download/100054/abstract-material-design-4k-ipad-pro-wallpaper-ilikewallpaper_com.jpg"
+                  ),
+                  fit : BoxFit.cover
+                  ),
+              ),
+              child: Center(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage("https://www.yingpook.com/static/assets/uploads/wp-content/uploads/2020/08/shutterstock_1294829227.jpg"),
+                    ),
+                    Text("วัด"),
+                  ],
+                ),
+              ),
+              ),
+            
+             ListTile(
+                 onTap: (){
+                   Navigator.pushNamed(context, '/gallery');
+                 },
+              leading: Icon(Icons.account_balance_sharp),
+              title: Text("gallery"),
+            ),
+          ],
+        ),
       ),
+      
       appBar: AppBar(
         title: Text(
           "Home Screen",
